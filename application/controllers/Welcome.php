@@ -34,12 +34,14 @@ class Welcome extends CI_Controller {
         $data = array();
         $data['helloTemplate'] = 'Hello Template URL';
         $data['listData'] = array('001', '0002');
-        /*lib_template::pushUrlPathCss(array(
-            'file03.css', 'file04.css'
-        ));
+        lib_template::pushUrlPathCss(array(
+            base_url('path_css/namecssfiles01.css'),  base_url('path_css/namecssfiles02.css')
+        ));//Your can add another css files
+         
          lib_template::pushUrlPathJavascript(array(
-          'javafile01.js', 'javafile02.js'
-          )); */
+           base_url('path_javascript/namejavascriptfiles01.js'), 'path_javascript/namejavascriptfiles02.js'
+          )); //Your can add another javascript files
+         
         lib_template::setChildPathFiles('welcome/welcome_message', $data);
         lib_template::RenderNow();
     }
